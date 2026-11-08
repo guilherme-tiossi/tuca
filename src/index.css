@@ -304,7 +304,20 @@ a:focus-visible {
 
 .red-button:hover {
   background: #a3060a;
+  border-color: #a3060a;
   color: #fff;
+}
+
+.red-button:active {
+  background: #7e0205;
+  border-color: #7e0205;
+}
+
+.intro .red-button:hover,
+.intro .red-button:active,
+.about-copy .red-button:hover,
+.about-copy .red-button:active {
+  outline: none;
 }
 
 .purchase-hero {
@@ -1899,8 +1912,7 @@ a:focus-visible {
 }
 
 .historia-page {
-  min-height: 100dvh;
-  padding: 45px max(20px, calc((100% - 1150px) / 2)) 48px;
+  padding: 45px max(20px, calc((100% - 1150px) / 2)) 50px;
   background: #fff;
   color: #121010;
 }
@@ -2386,11 +2398,20 @@ a:focus-visible {
   min-height: 352px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 40px 32px;
   border-radius: 7px;
   background: #e8e8e8;
   text-align: center;
+}
+
+.memoria-card-icon {
+  display: block;
+  width: 65px;
+  height: 65px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .memoria-card h3 {

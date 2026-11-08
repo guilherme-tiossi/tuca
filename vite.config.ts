@@ -115,8 +115,11 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
 
   const title = config.title ?? "Figma Make App"
   const description = config.description ?? ''
-  // Imported HTML keeps its own favicon; new Makes default to the Make product icon.
-  const favicon = config.icons?.icon ?? '/favicon.svg'
+  const pagesBasePath = () =>
+    process.env.GITHUB_PAGES_BASE
+      ? `/${process.env.GITHUB_PAGES_BASE.replace(/^\/|\/$/g, '')}/`
+      : '/'
+  const faviconFile = config.icons?.icon ?? 'favicon.png'
   const socialImage = config.openGraph?.image ?? ''
   const language = sanitizeHtmlValue(config.language) || 'en'
   const googleAnalyticsId = sanitizeHtmlValue(config.analytics?.googleAnalyticsId)
@@ -163,8 +166,13 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
         if (config.robots?.index === false) {
           tags.push({ tag: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' }, injectTo: 'head' })
         }
-        if (favicon) {
-          tags.push({ tag: 'link', attrs: { rel: 'icon', href: favicon }, injectTo: 'head' })
+        if (faviconFile) {
+          const iconHref = `${pagesBasePath()}${faviconFile.replace(/^\//, '')}`
+          tags.push({
+            tag: 'link',
+            attrs: { rel: 'icon', type: 'image/png', href: iconHref },
+            injectTo: 'head',
+          })
         }
         if (title) {
           tags.push({ tag: 'meta', attrs: { property: 'og:title', content: title }, injectTo: 'head' })

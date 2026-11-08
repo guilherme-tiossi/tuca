@@ -29,7 +29,7 @@ const spacesById: Record<SpaceId, SpaceContent> = {
     label: 'TUCA',
     features: [
       {
-        title: 'Tuca - Teatro Principal',
+        title: 'TUCA - TEATRO PRINCIPAL',
         images: instalacaoGallery('tuca-teatro-principal'),
         imageLabel: 'Teatro Principal',
         body: (
@@ -77,9 +77,9 @@ const spacesById: Record<SpaceId, SpaceContent> = {
     label: 'TUCARENA',
     features: [
       {
-        title: 'TUCArena',
+        title: 'TUCARENA',
         images: instalacaoGallery('tucarena-tucarena'),
-        imageLabel: 'TUCArena',
+        imageLabel: 'TUCARENA',
         body: (
           <>
             <p>
@@ -94,9 +94,9 @@ const spacesById: Record<SpaceId, SpaceContent> = {
         ),
       },
       {
-        title: 'Saguão do TUCArena',
+        title: 'Saguão do TUCARENA',
         images: instalacaoGallery('tucarena-saguao'),
-        imageLabel: 'Saguão do TUCArena',
+        imageLabel: 'Saguão do TUCARENA',
         reverse: true,
         body: (
           <>
@@ -193,9 +193,9 @@ const spacesById: Record<SpaceId, SpaceContent> = {
 const spaceTabs: { id: SpaceId; label: string }[] = [
   { id: 'tuca', label: 'TUCA' },
   { id: 'tucarena', label: 'TUCARENA' },
-  { id: 'paulo-freire', label: 'Sala Paulo Freire' },
-  { id: 'ensaio', label: 'Sala de Ensaio' },
-  { id: 'saguao', label: 'Saguão Superior' },
+  { id: 'paulo-freire', label: 'SALA PAULO FREIRE' },
+  { id: 'ensaio', label: 'SALA DE ENSAIO' },
+  { id: 'saguao', label: 'SAGUÃO SUPERIOR' },
 ]
 
 function InstalacaoCarousel({ images: slides, label }: { images: string[]; label: string }) {

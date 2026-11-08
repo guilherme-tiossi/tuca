@@ -35,9 +35,9 @@ const shows = [
   },
   {
     title: 'Prova de Vida',
-    subtitle: 'Em cartaz',
-    image: `${assets}/90dea.png`,
-    position: '57% center',
+    subtitle: 'Em cartaz até 29 de Novembro',
+    image: `${assets}/nova-prova-vida.jpeg`,
+    position: 'center',
     href: espetaculoDetailHref('Prova de vida'),
   },
 ]

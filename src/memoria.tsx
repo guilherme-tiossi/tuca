@@ -4,9 +4,12 @@ import { ASSETS_BASE, appHref } from './paths'
 
 const assets = ASSETS_BASE
 
-const cards: { title: string; text: ReactNode; emphasis: string }[] = [
+const memoriaIcons = `${assets}/memoria-icons`
+
+const cards: { title: string; icon: string; text: ReactNode; emphasis: string }[] = [
   {
     title: 'Atendimento à pesquisa',
+    icon: `${memoriaIcons}/research.png`,
     text: (
       <>
         Para realizar sua pesquisa, entre em contato conosco somente através do nosso e-mail, informando qual
@@ -18,6 +21,7 @@ const cards: { title: string; text: ReactNode; emphasis: string }[] = [
   },
   {
     title: 'Visitação técnica',
+    icon: `${memoriaIcons}/position.png`,
     text: (
       <>
         Para solicitar uma visita, entre em contato conosco através do nosso e-mail e ou telefone. O CDM Tuca
@@ -29,6 +33,7 @@ const cards: { title: string; text: ReactNode; emphasis: string }[] = [
   },
   {
     title: 'Ampliação do acervo: recebimento de doações',
+    icon: `${memoriaIcons}/heart.png`,
     text: (
       <>
         Para doar material pertinente ao Teatro TUCA, entre em contato conosco através do nosso e-mail e ou
@@ -132,6 +137,7 @@ export function MemoriaMain() {
           <div className="memoria-cards">
             {cards.map((card) => (
               <article key={card.title} className="memoria-card">
+                <img className="memoria-card-icon" src={card.icon} alt="" aria-hidden />
                 <h3>{card.title}</h3>
                 <p>{card.text}</p>
                 <p className="memoria-card-emphasis">{card.emphasis}</p>
