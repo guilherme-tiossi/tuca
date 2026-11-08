@@ -1,0 +1,10 @@
+{
+  "description": "Explore the TUCA Documentation and Memory Center, its historical archive, preservation goals, projects, partners, team, and contact information.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

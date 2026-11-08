@@ -1,0 +1,10 @@
+{
+  "description": "Explore detailed information about theater performances with interactive tabs for general info, synopsis, and technical sheets, all in a user-friendly layout.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

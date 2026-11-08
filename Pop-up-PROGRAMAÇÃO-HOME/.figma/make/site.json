@@ -1,0 +1,10 @@
+{
+  "description": "A TUCA signup modal lets visitors enter their contact details, choose cultural updates they want to receive, and submit their registration.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

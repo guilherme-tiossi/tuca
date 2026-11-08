@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Urbanist:Bold";
+  src: url("https://static.figma.com/font/Urbanist_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Urbanist:ExtraBold";
+  src: url("https://static.figma.com/font/Urbanist_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Urbanist:Regular";
+  src: url("https://static.figma.com/font/Urbanist_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Urbanist:SemiBold";
+  src: url("https://static.figma.com/font/Urbanist_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@theme {
+  --font-urbanist-regular: "Urbanist:Regular", sans-serif;
+  --font-urbanist-semibold: "Urbanist:SemiBold", sans-serif;
+  --font-urbanist-bold: "Urbanist:Bold", sans-serif;
+  --font-urbanist-extrabold: "Urbanist:ExtraBold", sans-serif;
+}
+
+@layer base {
+  html {
+    background: #121010;
+  }
+
+  body {
+    min-width: 320px;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .exhibition-button {
+    cursor: pointer;
+    transition:
+      background-color 200ms ease-out,
+      transform 100ms ease-out;
+  }
+
+  .exhibition-button:hover {
+    background-color: #a00508;
+  }
+
+  .exhibition-button:active {
+    background-color: #7e0205;
+    transform: translateY(1px);
+  }
+
+  .memory-arrow {
+    background: url("/assets/466ed.svg") center / 38px 38px no-repeat;
+    transition: background-image 120ms ease-out;
+  }
+
+  .memory-arrow:hover {
+    background-image: url("/assets/d0794.svg");
+  }
+
+  .memory-arrow:active {
+    background-image: url("/assets/9326d.svg");
+  }
+
+  .memory-arrow:focus-visible,
+  .exhibition-button:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+  }
+}

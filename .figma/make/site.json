@@ -1,0 +1,14 @@
+{
+  "title": "TUCA",
+  "icons": {
+    "icon": "/favicon%201.png"
+  },
+  "description": "Showcases a theater's offerings with interactive navigation, image carousels, accordions, and responsive design for seamless user engagement across devices.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

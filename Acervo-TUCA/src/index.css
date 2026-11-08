@@ -1,0 +1,642 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Urbanist:Bold";
+  src: url("https://static.figma.com/font/Urbanist_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Urbanist:ExtraBold";
+  src: url("https://static.figma.com/font/Urbanist_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Urbanist:Regular";
+  src: url("https://static.figma.com/font/Urbanist_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Urbanist:SemiBold";
+  src: url("https://static.figma.com/font/Urbanist_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@layer base {
+  html {
+    background: #121010;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    color: #121010;
+    font-family: "Urbanist:Regular", sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.app {
+  min-height: 100vh;
+  background: #121010;
+}
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  height: 80px;
+  background: #fff;
+  box-shadow: 0 4px 2.5px rgb(0 0 0 / 22%);
+}
+
+.header-inner {
+  display: flex;
+  width: min(100% - 48px, 1152px);
+  height: 100%;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  width: 118px;
+  height: 49px;
+  padding: 10px 7px;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.brand img {
+  width: 104px;
+  height: 29px;
+  object-fit: contain;
+}
+
+.main-nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.main-nav a {
+  padding: 16px 20px;
+  font-family: "Urbanist:SemiBold", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color 150ms ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible,
+.main-nav .is-current {
+  color: #c4080c;
+}
+
+.main-nav .is-current {
+  font-family: "Urbanist:ExtraBold", sans-serif;
+  font-weight: 800;
+}
+
+.archive {
+  min-height: 956px;
+  background: #121010;
+}
+
+.archive-inner {
+  width: min(100% - 48px, 1152px);
+  margin-inline: auto;
+  padding-top: 40px;
+  padding-bottom: 90px;
+}
+
+.archive-heading {
+  position: relative;
+  display: flex;
+  min-height: 43px;
+  align-items: center;
+  justify-content: center;
+}
+
+.archive-heading h1 {
+  color: #c4080c;
+  font-family: "Urbanist:SemiBold", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.back-to-memory {
+  position: absolute;
+  left: 8px;
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: url("/assets/466ed.svg") center / 38px 38px no-repeat;
+}
+
+.back-to-memory:hover,
+.back-to-memory:focus-visible {
+  background-image: url("/assets/d0794.svg");
+}
+
+.back-to-memory:active {
+  background-image: url("/assets/9326d.svg");
+}
+
+.back-to-memory img {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+  transform: scaleX(-1);
+}
+
+.collection-grid {
+  display: grid;
+  margin-top: 70px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 69px 94px;
+}
+
+.collection-card {
+  display: flex;
+  height: 320px;
+  padding: 36px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+}
+
+.collection-card h2 {
+  max-width: 448px;
+  color: #c4080c;
+  font-family: "Urbanist:Bold", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: pre-line;
+}
+
+.collection-card p {
+  max-width: 448px;
+  margin-top: 32px;
+  color: #000;
+  font-family: "Urbanist:Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.access-button {
+  display: flex;
+  width: 255px;
+  min-height: 39px;
+  margin-top: 46px;
+  padding: 8px 18px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 33px;
+  background: #c4080c;
+  color: #fff;
+  font-family: "Urbanist:Bold", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  transition: background-color 300ms ease-out;
+}
+
+.access-button:hover,
+.access-button:focus-visible {
+  background: #a00508;
+}
+
+.access-button:active {
+  background: #7e0205;
+  transition-duration: 0ms;
+}
+
+.document-page {
+  background: #121010;
+}
+
+.document-shell {
+  position: relative;
+  width: min(100% - 48px, 1152px);
+  margin-inline: auto;
+  padding: 40px 0 65px;
+}
+
+.back-to-archive {
+  position: absolute;
+  top: 40px;
+  left: 8px;
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: url("/assets/466ed.svg") center / 38px 38px no-repeat;
+}
+
+.back-to-archive:hover,
+.back-to-archive:focus-visible {
+  background-image: url("/assets/d0794.svg");
+}
+
+.back-to-archive:active {
+  background-image: url("/assets/9326d.svg");
+}
+
+.back-to-archive img {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+  transform: scaleX(-1);
+}
+
+.document-card {
+  display: flex;
+  width: min(calc(100% - 196px), 956px);
+  margin-inline: auto;
+  padding: 35px 98px 40px;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+  font-family: "Urbanist:Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.document-card > h1 {
+  margin-bottom: 38px;
+  color: #c4080c;
+  font-family: "Urbanist:SemiBold", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+
+.document-section + .document-section {
+  margin-top: 30px;
+}
+
+.document-section h2 {
+  margin-bottom: 25px;
+  color: #c4080c;
+  font-family: "Urbanist:SemiBold", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.document-section strong {
+  font-family: "Urbanist:SemiBold", sans-serif;
+  font-weight: 600;
+}
+
+.document-section > p {
+  margin-top: 16px;
+}
+
+.identification p {
+  margin: 0;
+}
+
+.download-button {
+  align-self: center;
+  margin-top: 40px;
+  padding: 8px 18px;
+  border-radius: 33px;
+  background: #c4080c;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Urbanist:Bold", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  transition: background-color 300ms ease-out;
+}
+
+.download-button:hover,
+.download-button:focus-visible {
+  background: #a00508;
+}
+
+.download-button:active {
+  background: #7e0205;
+  transition-duration: 0ms;
+}
+
+.site-footer {
+  min-height: 357px;
+  padding-top: 44px;
+  padding-bottom: 30px;
+  background: #000;
+  color: #fff;
+}
+
+.footer-inner {
+  display: grid;
+  width: min(100% - 48px, 1152px);
+  margin-inline: auto;
+  grid-template-columns: 117px 208px 1fr 192px;
+  gap: 79px;
+}
+
+.puc-logo {
+  width: 117px;
+  height: 188px;
+  object-fit: contain;
+}
+
+.footer-block {
+  font-family: "Urbanist:Regular", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.footer-block h2 {
+  margin-bottom: 23px;
+  font-family: "Urbanist:SemiBold", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.footer-block p + p {
+  margin-top: 17px;
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+}
+
+.footer-center .footer-block p + p,
+.site-footer .footer-block:last-child p + p {
+  margin-top: 0;
+}
+
+.social-block h2 {
+  margin-bottom: 23px;
+}
+
+.social-list {
+  display: flex;
+  gap: 18px;
+}
+
+.social-link {
+  position: relative;
+  display: block;
+  width: 40.142px;
+  height: 40.142px;
+}
+
+.social-circle {
+  position: absolute;
+  inset: 0;
+  width: 40.142px;
+  height: 40.142px;
+}
+
+.social-icon {
+  position: absolute;
+  inset: 8.9px auto auto 8.9px;
+  width: 23.193px;
+  height: 23.193px;
+  object-fit: contain;
+}
+
+.social-icon.x-icon {
+  inset: 9.81px auto auto 9.81px;
+  width: 20.517px;
+  height: 20.517px;
+}
+
+.copyright {
+  margin-top: 30px;
+  text-align: center;
+  font-family: "Urbanist:Regular", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.copyright p + p {
+  margin-top: 17px;
+}
+
+@media (max-width: 1100px) {
+  .site-header {
+    height: auto;
+  }
+
+  .header-inner {
+    width: 100%;
+    padding-left: 24px;
+  }
+
+  .main-nav {
+    overflow-x: auto;
+    padding-right: 24px;
+    scrollbar-width: none;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-nav a {
+    padding-inline: 12px;
+  }
+
+  .collection-grid {
+    gap: 48px 32px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 117px 1fr 1fr;
+    gap: 56px;
+  }
+
+  .footer-inner > .footer-block:last-child {
+    grid-column: 3;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-inner {
+    display: block;
+    padding: 8px 0 0;
+  }
+
+  .brand {
+    margin-left: 17px;
+  }
+
+  .main-nav {
+    gap: 0;
+    padding-inline: 12px;
+    border-top: 1px solid #e8e8e8;
+  }
+
+  .main-nav a {
+    padding: 13px 12px;
+    font-size: 14px;
+  }
+
+  .archive-inner {
+    width: min(100% - 32px, 560px);
+    padding-top: 32px;
+    padding-bottom: 56px;
+  }
+
+  .archive-heading h1 {
+    font-size: 30px;
+  }
+
+  .back-to-memory {
+    left: 0;
+  }
+
+  .collection-grid {
+    margin-top: 42px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .collection-card {
+    height: 300px;
+    padding: 42px 24px 36px;
+  }
+
+  .collection-card h2 {
+    font-size: 20px;
+  }
+
+  .collection-card p {
+    font-size: 16px;
+  }
+
+  .access-button {
+    width: min(255px, 100%);
+    font-size: 20px;
+  }
+
+  .document-shell {
+    width: min(100% - 32px, 560px);
+    min-height: 0;
+    padding: 32px 0 56px;
+  }
+
+  .back-to-archive {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 20px;
+  }
+
+  .document-card {
+    width: 100%;
+    min-height: 0;
+    padding: 32px 24px 40px;
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  .document-card > h1 {
+    margin-bottom: 34px;
+    font-size: 24px;
+  }
+
+  .document-section + .document-section {
+    margin-top: 36px;
+  }
+
+  .document-section h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .document-section > p {
+    margin-top: 15px;
+  }
+
+  .download-button {
+    margin-top: 40px;
+    font-size: 18px;
+  }
+
+  .site-footer {
+    padding-inline: 24px;
+  }
+
+  .footer-inner {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 44px 32px;
+  }
+
+  .puc-logo {
+    grid-row: span 2;
+  }
+
+  .footer-center {
+    gap: 44px;
+  }
+
+  .footer-inner > .footer-block:last-child {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .puc-logo {
+    grid-row: auto;
+  }
+
+  .footer-inner > .footer-block:last-child {
+    grid-column: 1;
+  }
+
+  .copyright {
+    line-height: 1.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .access-button,
+  .download-button,
+  .main-nav a {
+    transition: none;
+  }
+}

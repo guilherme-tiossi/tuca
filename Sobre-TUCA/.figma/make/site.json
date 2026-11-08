@@ -1,0 +1,10 @@
+{
+  "description": "Explore TUCA’s history through an interactive timeline that reveals year-specific stories and images for visitors and theater enthusiasts.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

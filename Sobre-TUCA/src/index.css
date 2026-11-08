@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Urbanist:Bold';
+  src: url('https://static.figma.com/font/Urbanist_wght__2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Urbanist:ExtraBold';
+  src: url('https://static.figma.com/font/Urbanist_wght__2') format('woff2');
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Urbanist:Medium';
+  src: url('https://static.figma.com/font/Urbanist_wght__2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Urbanist:Regular';
+  src: url('https://static.figma.com/font/Urbanist_wght__2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Urbanist:SemiBold';
+  src: url('https://static.figma.com/font/Urbanist_wght__2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@keyframes content-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.history-scroll {
+  overscroll-behavior: contain;
+  padding-right: 10px;
+  scrollbar-color: #9e9e9e transparent;
+  scrollbar-width: thin;
+}
+
+.history-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.history-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.history-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #9e9e9e;
+}
+
+.history-scroll::-webkit-scrollbar-thumb:hover {
+  background: #808080;
+}
+
+.popup-close img {
+  width: 28px;
+  height: 28px;
+}
+
+.popup-close:hover .popup-close-default {
+  display: none;
+}
+
+.popup-close:hover .popup-close-hover {
+  display: block;
+}
+
+.popup-close:active .popup-close-hover {
+  display: none;
+}
+
+.popup-close:active .popup-close-pressed {
+  display: block;
+}

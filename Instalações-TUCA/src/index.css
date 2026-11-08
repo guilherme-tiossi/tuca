@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+:root {
+  font-family: 'Outfit', sans-serif;
+  color: #121010;
+  background: #fff;
+  font-synthesis: none;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(7vw, 28px);
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 2px 5px rgba(0,0,0,.18);
+}
+.logo { color: #121010; text-decoration: none; font-size: 37px; line-height: 1; font-weight: 700; letter-spacing: 1px; }
+.logo span { color: #c4080c; }
+.main-nav { display: flex; align-items: center; gap: clamp(28px, 4.1vw, 64px); }
+.main-nav a { color: #121010; text-decoration: none; text-transform: uppercase; font-size: 15px; font-weight: 500; transition: color .2s; }
+.main-nav a:hover, .main-nav .current { color: #c4080c; }
+.main-nav .current { font-weight: 600; }
+
+.subnav-shell {
+  position: fixed;
+  z-index: 40;
+  top: 80px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.subnav {
+  width: min(748px, calc(100% - 32px));
+  display: flex;
+  padding: 7px;
+  border-radius: 999px;
+  background: #e8e8e8;
+  box-shadow: 0 2px 3px rgba(0,0,0,.2);
+}
+.subnav button {
+  flex: 1;
+  min-height: 37px;
+  border: 0;
+  border-radius: 999px;
+  color: #121010;
+  background: transparent;
+  font-size: 15px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.subnav button:hover:not(.active) { background: rgba(158,158,158,.28); }
+.subnav button.active { color: white; background: #c4080c; font-weight: 500; }
+
+main { padding-top: 160px; }
+.space-section { scroll-margin-top: 158px; padding: 28px 0 0; }
+.space-section.first { padding-top: 25px; }
+.space-section.single { border-top: 1.5px solid #c4080c; padding-top: 36px; padding-bottom: 32px; }
+.feature {
+  width: min(1152px, calc(100% - 48px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 527px 564px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding-bottom: 26px;
+}
+.feature.reverse { grid-template-columns: 564px 527px; }
+.feature.reverse .visual { order: 2; }
+.feature.reverse .info-card { order: 1; }
+.visual h2 { margin: 0 0 14px; color: #c4080c; font-size: 22px; line-height: 1.2; font-weight: 600; }
+.carousel { width: 527px; }
+.carousel-frame { position: relative; width: 527px; aspect-ratio: 527 / 355; overflow: hidden; border-radius: 7px; background: #e8e8e8; }
+.carousel-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .35s ease; }
+.carousel-frame img.visible { opacity: 1; }
+.dots { display: flex; justify-content: center; gap: 7px; padding: 13px 0 0; }
+.dots button { width: 13px; height: 13px; padding: 0; border: 0; border-radius: 50%; background: rgba(128,128,128,.8); cursor: pointer; transition: background .18s, transform .18s; }
+.dots button:hover { background: #737373; transform: scale(1.08); }
+.dots button.active { background: #c4080c; }
+.info-card {
+  width: 564px;
+  min-height: 296px;
+  padding: 34px 62px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  background: #121010;
+  font-size: 16px;
+  line-height: 1.25;
+}
+.info-card p { margin: 0 0 16px; }
+.info-card p:last-child { margin-bottom: 0; }
+.info-card strong { font-weight: 600; }
+.separator { height: 1.5px; margin: 0 0 31px; background: #c4080c; }
+.space-section:not(.first):not(.single) { border-top: 1.5px solid #c4080c; padding-top: 36px; }
+
+footer { padding: 45px max(7vw, 28px) 24px; color: white; background: #050505; font-size: 14px; }
+.footer-grid { max-width: 1152px; margin: auto; display: grid; grid-template-columns: .8fr 1.35fr 1.35fr 1fr; gap: 48px; }
+footer h3 { margin: 0 0 18px; font-size: 16px; font-weight: 500; }
+footer p { color: #e5e5e5; font-size: 13px; line-height: 1.35; }
+.seal { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; border: 1px solid #c4080c; border-radius: 50%; width: 132px; height: 132px; }
+.seal strong { font-size: 24px; }
+.seal span { max-width: 105px; font-size: 9px; }
+.socials { display: flex; gap: 14px; }
+.socials span { width: 39px; height: 39px; display: grid; place-items: center; color: #050505; background: white; border-radius: 50%; font-size: 21px; font-weight: 600; }
+.copyright { margin: 32px 0 0; text-align: center; }
+
+@media (max-width: 1050px) {
+  .site-header { padding: 0 28px; }
+  .main-nav { gap: 20px; }
+  .main-nav a { font-size: 13px; }
+  .feature, .feature.reverse { width: min(760px, calc(100% - 40px)); grid-template-columns: 1fr; gap: 20px; }
+  .feature.reverse .visual, .feature.reverse .info-card { order: initial; }
+  .visual, .carousel, .carousel-frame, .info-card { width: 100%; }
+  .info-card { min-height: 250px; }
+}
+
+@media (max-width: 720px) {
+  .site-header { height: 66px; padding: 0 20px; }
+  .logo { font-size: 31px; }
+  .main-nav a:not(.current) { display: none; }
+  .main-nav .current { font-size: 13px; }
+  .subnav-shell { top: 66px; height: 68px; justify-content: flex-start; overflow-x: auto; padding: 0 12px; }
+  .subnav { width: max-content; min-width: 680px; }
+  .subnav button { padding: 0 18px; }
+  main { padding-top: 134px; }
+  .space-section, .space-section.first { scroll-margin-top: 133px; padding-top: 24px; }
+  .feature, .feature.reverse { width: calc(100% - 28px); gap: 12px; padding-bottom: 24px; }
+  .visual h2 { font-size: 20px; margin-bottom: 11px; }
+  .info-card { min-height: auto; padding: 28px 25px; font-size: 15px; }
+  .separator { margin-bottom: 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .seal { margin: auto; }
+}

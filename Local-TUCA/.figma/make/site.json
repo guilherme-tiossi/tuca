@@ -1,0 +1,10 @@
+{
+  "description": "Displays location details with styled address cards alongside an interactive Google Map for easy navigation and responsive viewing on all devices.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

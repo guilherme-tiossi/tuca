@@ -1,0 +1,49 @@
+{
+  "resolved": [
+    {
+      "family": "Urbanist",
+      "style": "Bold",
+      "font_style": "normal",
+      "font_weight": 700,
+      "format": "woff2",
+      "location": {
+        "type": "url",
+        "value": "https://static.figma.com/font/Urbanist_wght__2"
+      }
+    },
+    {
+      "family": "Urbanist",
+      "style": "ExtraBold",
+      "font_style": "normal",
+      "font_weight": 800,
+      "format": "woff2",
+      "location": {
+        "type": "url",
+        "value": "https://static.figma.com/font/Urbanist_wght__2"
+      }
+    },
+    {
+      "family": "Urbanist",
+      "style": "Regular",
+      "font_style": "normal",
+      "font_weight": 400,
+      "format": "woff2",
+      "location": {
+        "type": "url",
+        "value": "https://static.figma.com/font/Urbanist_wght__2"
+      }
+    },
+    {
+      "family": "Urbanist",
+      "style": "SemiBold",
+      "font_style": "normal",
+      "font_weight": 600,
+      "format": "woff2",
+      "location": {
+        "type": "url",
+        "value": "https://static.figma.com/font/Urbanist_wght__2"
+      }
+    }
+  ],
+  "blocked": []
+}

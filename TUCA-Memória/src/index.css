@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Urbanist:Bold";
+  src: url("https://static.figma.com/font/Urbanist_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Urbanist:ExtraBold";
+  src: url("https://static.figma.com/font/Urbanist_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Urbanist:Regular";
+  src: url("https://static.figma.com/font/Urbanist_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Urbanist:SemiBold";
+  src: url("https://static.figma.com/font/Urbanist_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    background: #ffffff;
+    font-family: "Urbanist:Regular", sans-serif;
+  }
+
+  button,
+  a {
+    outline-color: #c4080c;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .section-title {
+    font-family: "Urbanist:Bold", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: normal;
+    color: #c4080c;
+  }
+
+  .contact-title {
+    font-family: "Urbanist:Bold", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .contact-copy {
+    font-family: "Urbanist:Regular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .footer-title {
+    font-family: "Urbanist:SemiBold", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .footer-copy {
+    font-family: "Urbanist:Regular", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
