@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react'
+import { publicUrl } from './paths'
 
 type SpaceId = 'tuca' | 'tucarena' | 'paulo-freire' | 'ensaio' | 'saguao'
 
@@ -16,7 +17,7 @@ type SpaceContent = {
 }
 
 function instalacaoImage(slug: string, index: number) {
-  return `/images/instalacoes/${slug}-${index}.png`
+  return publicUrl(`/images/instalacoes/${slug}-${index}.png`)
 }
 
 function instalacaoGallery(slug: string) {

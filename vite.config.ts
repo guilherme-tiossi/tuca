@@ -93,7 +93,9 @@ function githubPagesAssetUrls(): Plugin {
       for (const file of Object.values(bundle)) {
         if (file.type !== 'asset' || !file.fileName.endsWith('.css')) continue
         const source = String(file.source)
-        file.source = source.replaceAll("url('/assets/", `url('${base}assets/`)
+        file.source = source
+          .replaceAll("url('/assets/", `url('${base}assets/`)
+          .replaceAll("url('/images/", `url('${base}images/`)
       }
     },
   }

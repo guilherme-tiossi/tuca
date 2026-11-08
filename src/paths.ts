@@ -19,3 +19,9 @@ export function appHref(route: string) {
 }
 
 export const ASSETS_BASE = `${import.meta.env.BASE_URL}assets`.replace(/\/{2,}/g, '/')
+
+/** Arquivos em `public/` (ex.: `/images/...`). */
+export function publicUrl(path: string) {
+  const clean = path.replace(/^\//, '')
+  return `${import.meta.env.BASE_URL}${clean}`.replace(/([^:]\/)\/+/g, '$1')
+}
