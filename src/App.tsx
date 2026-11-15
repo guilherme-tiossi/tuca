@@ -42,7 +42,7 @@ const shows = [
   },
   {
     title: 'Todas as Coisas Maravilhosas',
-    subtitle: 'Em cartaz até 1 de Novembro',
+    subtitle: 'Em cartaz até 13 de dezembro',
     image: `${assets}/7cba4.png`,
     position: '49% center',
     href: espetaculoDetailHref('Todas as coisas maravilhosas'),

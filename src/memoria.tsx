@@ -141,8 +141,8 @@ export function MemoriaMain() {
                   className="memoria-card-icon"
                   src={card.icon}
                   alt=""
-                  width={77}
-                  height={77}
+                  width={62}
+                  height={62}
                   decoding="async"
                   aria-hidden
                 />
