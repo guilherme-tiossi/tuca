@@ -47,9 +47,14 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: clip;
   background: #fff;
 }
 
@@ -70,17 +75,16 @@ a:focus-visible {
 }
 
 .site-header {
-  position: relative;
-  z-index: 20;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   height: 80px;
   padding: 0 max(24px, calc((100% - 1152px) / 2));
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #fff;
-  box-shadow: 0 4px 2.5px rgb(0 0 0 / 22%);  position: sticky;
-  top: 0;
-  z-index: 1000;
+  box-shadow: 0 4px 2.5px rgb(0 0 0 / 22%);
 }
 
 .site-logo-link {
@@ -164,6 +168,12 @@ a:focus-visible {
 
 .carousel-slide {
   min-width: 100%;
+  height: 100%;
+}
+
+.carousel-slide picture {
+  display: block;
+  width: 100%;
   height: 100%;
 }
 
@@ -1033,22 +1043,26 @@ a:focus-visible {
 
 .espetaculos-page {
   min-height: 100dvh;
+  overflow-x: clip;
   background: #121010;
 }
 
 .espetaculos-page .show-section {
   position: relative;
+  overflow-x: clip;
   scroll-margin-top: 96px;
 }
 
 .espetaculos-page .section-divider {
   position: absolute;
   bottom: 0;
-  left: 50%;
-  width: 1440px;
+  left: 0;
+  right: 0;
+  width: 100%;
   height: 1.5px;
-  max-width: none;
-  transform: translateX(-50%);
+  max-width: 100%;
+  transform: none;
+  object-fit: cover;
 }
 
 .espetaculos-page .show-section:last-child .section-divider {
@@ -1204,17 +1218,32 @@ a:focus-visible {
 
 .espetaculos-page .show-detail-row {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: center;
+  gap: 14px;
+}
+
+.espetaculos-page .show-detail-icon-slot {
+  display: flex;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
 }
 
 .espetaculos-page .show-detail-icon {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  margin-top: 1px;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 28px;
+  max-height: 28px;
   object-fit: contain;
   object-position: center;
+}
+
+.espetaculos-page .show-detail-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .espetaculos-page .show-details strong {
@@ -1493,10 +1522,9 @@ a:focus-visible {
 .instalacoes-page .inst-separator {
   border: 0;
   height: 1.5px;
-  width: 100vw;
-  max-width: none;
+  width: 100%;
+  max-width: 100%;
   margin: 8px 0 32px;
-  margin-left: calc(50% - 50vw);
   background: #c4080c;
 }
 
@@ -1942,9 +1970,10 @@ a:focus-visible {
   position: absolute;
   top: 24px;
   bottom: 31px;
-  left: 7px;
-  width: 1.5px;
+  left: 6px;
+  width: 2.5px;
   background: #c4080c;
+  border-radius: 2px;
 }
 
 .historia-timeline-dot {
@@ -2134,6 +2163,7 @@ a:focus-visible {
     flex: none;
     height: auto;
     max-height: none;
+    padding-bottom: 22px;
   }
 
   .historia-timeline-years {
@@ -2142,12 +2172,23 @@ a:focus-visible {
     justify-content: center;
     gap: 8px 16px;
     height: auto;
-    padding: 0;
+    padding: 0 4px 8px;
   }
 
-  .historia-timeline-line,
+  .historia-timeline-line {
+    top: auto;
+    bottom: 4px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    height: 2.5px;
+  }
+
   .historia-timeline-dot {
-    display: none;
+    top: auto;
+    bottom: calc(4px - 6px);
+    transform: translateX(0);
+    transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1) !important;
   }
 
   .historia-timeline-year {
@@ -2407,8 +2448,9 @@ a:focus-visible {
 
 .memoria-card-icon {
   display: block;
-  width: 65px;
-  height: 65px;
+  width: 77px;
+  height: 77px;
+  max-width: 100%;
   margin-bottom: 20px;
   flex-shrink: 0;
   object-fit: contain;

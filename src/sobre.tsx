@@ -134,22 +134,37 @@ function Timeline({
 }) {
   const navRef = useRef<HTMLElement>(null)
   const itemRefs = useRef<Partial<Record<Year, HTMLButtonElement>>>({})
-  const [dotTop, setDotTop] = useState(0)
+  const [dotOffset, setDotOffset] = useState(0)
+  const [timelineHorizontal, setTimelineHorizontal] = useState(false)
 
   useLayoutEffect(() => {
+    const horizontalQuery = window.matchMedia('(max-width: 900px)')
+
     const updateDot = () => {
       const nav = navRef.current
       const button = itemRefs.current[selectedYear]
       if (!nav || !button) return
 
+      const horizontal = horizontalQuery.matches
+      setTimelineHorizontal(horizontal)
+
       const navRect = nav.getBoundingClientRect()
       const buttonRect = button.getBoundingClientRect()
-      setDotTop(buttonRect.top - navRect.top + buttonRect.height / 2 - 7.5)
+
+      if (horizontal) {
+        setDotOffset(buttonRect.left - navRect.left + buttonRect.width / 2 - 7.5)
+      } else {
+        setDotOffset(buttonRect.top - navRect.top + buttonRect.height / 2 - 7.5)
+      }
     }
 
     updateDot()
+    horizontalQuery.addEventListener('change', updateDot)
     window.addEventListener('resize', updateDot)
-    return () => window.removeEventListener('resize', updateDot)
+    return () => {
+      horizontalQuery.removeEventListener('change', updateDot)
+      window.removeEventListener('resize', updateDot)
+    }
   }, [selectedYear])
 
   return (
@@ -158,7 +173,11 @@ function Timeline({
       <div
         className="historia-timeline-dot"
         aria-hidden="true"
-        style={{ transform: `translateY(${dotTop}px)` }}
+        style={
+          timelineHorizontal
+            ? { transform: `translateX(${dotOffset}px)` }
+            : { transform: `translateY(${dotOffset}px)` }
+        }
       />
       <ol className="historia-timeline-years">
         {YEARS.map((year) => {

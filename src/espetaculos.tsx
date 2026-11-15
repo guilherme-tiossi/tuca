@@ -37,8 +37,7 @@ const espetaculos: Espetaculo[] = [
   {
     title: 'Todas as coisas maravilhosas',
     ticketHref: SYMPLA_EVENT_TODAS_COISAS,
-    poster: `${assets}/86f1b.png`,
-    posterClass: 'poster-all',
+    poster: `${assets}/carousel-mobile/maravilhosas-mobile.png`,
     genre: 'Comédia Dramática',
     season: '16 de outubro a 13 de dezembro de 2026',
     schedule: 'Sextas e sábados às 20h, domingos às 18h',
@@ -197,8 +196,10 @@ const tabs: { id: Tab; label: string }[] = [
 function ShowDetailRow({ icon, children }: { icon: string; children: ReactNode }) {
   return (
     <p className="show-detail-row">
-      <img className="show-detail-icon" src={icon} alt="" width={28} height={28} />
-      <span>{children}</span>
+      <span className="show-detail-icon-slot">
+        <img className="show-detail-icon" src={icon} alt="" width={28} height={28} />
+      </span>
+      <span className="show-detail-text">{children}</span>
     </p>
   )
 }

@@ -137,7 +137,15 @@ export function MemoriaMain() {
           <div className="memoria-cards">
             {cards.map((card) => (
               <article key={card.title} className="memoria-card">
-                <img className="memoria-card-icon" src={card.icon} alt="" aria-hidden />
+                <img
+                  className="memoria-card-icon"
+                  src={card.icon}
+                  alt=""
+                  width={77}
+                  height={77}
+                  decoding="async"
+                  aria-hidden
+                />
                 <h3>{card.title}</h3>
                 <p>{card.text}</p>
                 <p className="memoria-card-emphasis">{card.emphasis}</p>

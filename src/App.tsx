@@ -12,10 +12,24 @@ import { SYMPLA_TUCA_HOME, espetaculoDetailHref } from './sympla'
 const assets = ASSETS_BASE
 const ticketUrl = SYMPLA_TUCA_HOME
 
+const carouselMobile = `${assets}/carousel-mobile`
+
 const slides = [
-  { src: `${assets}/186b6.png`, alt: 'Dois Papas' },
-  { src: `${assets}/carousel-2.png`, alt: 'Todas as Coisas Maravilhosas' },
-  { src: `${assets}/carousel-3.png`, alt: 'Prova de Vida' },
+  {
+    src: `${assets}/186b6.png`,
+    srcMobile: `${carouselMobile}/papas-mobile.png`,
+    alt: 'Dois Papas',
+  },
+  {
+    src: `${assets}/carousel-2.png`,
+    srcMobile: `${carouselMobile}/maravilhosas-mobile.png`,
+    alt: 'Todas as Coisas Maravilhosas',
+  },
+  {
+    src: `${assets}/carousel-3.png`,
+    srcMobile: `${carouselMobile}/vida-mobile.png`,
+    alt: 'Prova de Vida',
+  },
 ]
 
 const shows = [
@@ -115,7 +129,10 @@ function Carousel() {
       <div className="carousel-track" style={{ transform: `translateX(-${current * 100}%)` }}>
         {slides.map((slide, index) => (
           <div className="carousel-slide" key={slide.src} aria-hidden={current !== index}>
-            <img src={slide.src} alt={slide.alt} />
+            <picture>
+              <source media="(max-width: 767px)" srcSet={slide.srcMobile} />
+              <img src={slide.src} alt={slide.alt} />
+            </picture>
           </div>
         ))}
       </div>
@@ -280,7 +297,7 @@ function LocationPage() {
                 <h3 className="font-urbanist-bold text-[22px] font-bold">Multipark PUC Perdizes</h3>
                 <div className="mt-[22px]">
                   <p>Valor: R$42,00</p>
-                  <p>Rua Cardozo de Almeida, 990.</p>
+                  <p>Rua Cardoso de Almeida, 990.</p>
                   <p>Telefone: (11) 3177-5555</p>
                   <p>Segunda a sexta: 7h - 22h | Sábado: 9h - 20h</p>
                 </div>
